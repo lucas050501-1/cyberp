@@ -17,7 +17,9 @@
  
  export const ForgotPasswordPage: React.FC = () => {
    const { showSuccess, showError } = useToast();
+ }
 +  const [emailSent, setEmailSent] = React.useState(false);
  
    const {
      register,
+   }
