@@ -1,0 +1,151 @@
+import { User, Product, Order, CartItem } from '../../types';
+
+export const mockUsers: User[] = [
+  {
+    id: '1',
+    email: 'admin@florashop.com',
+    firstName: 'Administrador',
+    lastName: 'Principal',
+    role: 'admin',
+    createdAt: '2024-01-01T00:00:00Z',
+    updatedAt: '2024-01-01T00:00:00Z',
+  },
+  {
+    id: '2',
+    email: 'employee@florashop.com',
+    firstName: 'Empleado',
+    lastName: 'Ventas',
+    role: 'employee',
+    createdAt: '2024-01-02T00:00:00Z',
+    updatedAt: '2024-01-02T00:00:00Z',
+  },
+  {
+    id: '3',
+    email: 'cliente@email.com',
+    firstName: 'María',
+    lastName: 'González',
+    role: 'client',
+    createdAt: '2024-01-03T00:00:00Z',
+    updatedAt: '2024-01-03T00:00:00Z',
+  },
+];
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'Rosas Rojas Premium',
+    description: 'Hermosas rosas rojas de la más alta calidad, perfectas para expresar amor y pasión.',
+    price: 45000,
+    category: 'Rosas',
+    stock: 25,
+    imageUrl: 'https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg',
+    isActive: true,
+    createdAt: '2024-01-01T00:00:00Z',
+    updatedAt: '2024-01-01T00:00:00Z',
+  },
+  {
+    id: '2',
+    name: 'Tulipanes Holandeses',
+    description: 'Tulipanes frescos importados directamente de Holanda, ideales para cualquier ocasión.',
+    price: 35000,
+    category: 'Tulipanes',
+    stock: 15,
+    imageUrl: 'https://images.pexels.com/photos/1231715/pexels-photo-1231715.jpeg',
+    isActive: true,
+    createdAt: '2024-01-02T00:00:00Z',
+    updatedAt: '2024-01-02T00:00:00Z',
+  },
+  {
+    id: '3',
+    name: 'Girasoles Brillantes',
+    description: 'Girasoles vibrantes que aportan alegría y energía positiva a cualquier espacio.',
+    price: 28000,
+    category: 'Girasoles',
+    stock: 30,
+    imageUrl: 'https://images.pexels.com/photos/164338/pexels-photo-164338.jpeg',
+    isActive: true,
+    createdAt: '2024-01-03T00:00:00Z',
+    updatedAt: '2024-01-03T00:00:00Z',
+  },
+  {
+    id: '4',
+    name: 'Orquídeas Exóticas',
+    description: 'Orquídeas elegantes y sofisticadas, símbolo de belleza y refinamiento.',
+    price: 85000,
+    category: 'Orquídeas',
+    stock: 8,
+    imageUrl: 'https://images.pexels.com/photos/1755625/pexels-photo-1755625.jpeg',
+    isActive: true,
+    createdAt: '2024-01-04T00:00:00Z',
+    updatedAt: '2024-01-04T00:00:00Z',
+  },
+  {
+    id: '5',
+    name: 'Ramo Mixto Primaveral',
+    description: 'Hermoso arreglo con flores de temporada que celebra la belleza de la primavera.',
+    price: 65000,
+    category: 'Ramos',
+    stock: 12,
+    imageUrl: 'https://images.pexels.com/photos/1077735/pexels-photo-1077735.jpeg',
+    isActive: true,
+    createdAt: '2024-01-05T00:00:00Z',
+    updatedAt: '2024-01-05T00:00:00Z',
+  },
+  {
+    id: '6',
+    name: 'Lirios Blancos',
+    description: 'Lirios blancos puros y elegantes, perfectos para ceremonias y eventos especiales.',
+    price: 42000,
+    category: 'Lirios',
+    stock: 20,
+    imageUrl: 'https://images.pexels.com/photos/1606810/pexels-photo-1606810.jpeg',
+    isActive: true,
+    createdAt: '2024-01-06T00:00:00Z',
+    updatedAt: '2024-01-06T00:00:00Z',
+  },
+];
+
+export const mockOrders: Order[] = [
+  {
+    id: '1',
+    userId: '3',
+    items: [
+      {
+        id: '1',
+        productId: '1',
+        product: mockProducts[0],
+        quantity: 2,
+        price: 45000,
+      },
+    ],
+    total: 90000,
+    status: 'delivered',
+    paymentMethod: 'card',
+    paymentStatus: 'completed',
+    shippingAddress: {
+      street: 'Calle 123 #45-67',
+      city: 'Bogotá',
+      state: 'Cundinamarca',
+      zipCode: '110111',
+      country: 'Colombia',
+    },
+    createdAt: '2024-01-15T10:30:00Z',
+    updatedAt: '2024-01-20T14:45:00Z',
+  },
+];
+
+// Mock stats data
+export const mockStats = {
+  totalSales: 2450000,
+  totalOrders: 87,
+  topProducts: [
+    { product: mockProducts[0], totalSold: 25, revenue: 1125000 },
+    { product: mockProducts[4], totalSold: 18, revenue: 1170000 },
+    { product: mockProducts[3], totalSold: 8, revenue: 680000 },
+  ],
+  salesByMonth: [
+    { month: 'Enero', sales: 850000 },
+    { month: 'Febrero', sales: 920000 },
+    { month: 'Marzo', sales: 680000 },
+  ],
+};
